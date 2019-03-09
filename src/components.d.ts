@@ -15,22 +15,11 @@ export namespace Components {
   interface ArrowIcon {
     'color': string;
     'height': number;
+    'viewBox': string;
     'width': number;
   }
   interface ArrowIconAttributes extends StencilHTMLAttributes {
     'color'?: string;
-    'height'?: number;
-    'width'?: number;
-  }
-
-  interface SvgIcon {
-    'fill': string;
-    'height': number;
-    'viewBox': string;
-    'width': number;
-  }
-  interface SvgIconAttributes extends StencilHTMLAttributes {
-    'fill'?: string;
     'height'?: number;
     'viewBox'?: string;
     'width'?: number;
@@ -40,12 +29,10 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'ArrowIcon': Components.ArrowIcon;
-    'SvgIcon': Components.SvgIcon;
   }
 
   interface StencilIntrinsicElements {
     'arrow-icon': Components.ArrowIconAttributes;
-    'svg-icon': Components.SvgIconAttributes;
   }
 
 
@@ -55,20 +42,12 @@ declare global {
     new (): HTMLArrowIconElement;
   };
 
-  interface HTMLSvgIconElement extends Components.SvgIcon, HTMLStencilElement {}
-  var HTMLSvgIconElement: {
-    prototype: HTMLSvgIconElement;
-    new (): HTMLSvgIconElement;
-  };
-
   interface HTMLElementTagNameMap {
     'arrow-icon': HTMLArrowIconElement
-    'svg-icon': HTMLSvgIconElement
   }
 
   interface ElementTagNameMap {
     'arrow-icon': HTMLArrowIconElement;
-    'svg-icon': HTMLSvgIconElement;
   }
 
 
