@@ -20,8 +20,40 @@
     <span>Stencil components</span>
   </header>
 
-  <br>Hello developers!</div>
+  <br>Demonstration of an issue with &lt;svg /&gt; icon rendering when a &lt;path /&gt; is taken from a &lt;slot /&gt;
+  <br>
+  <br>Here should be an arow Icon: <arrow-icon></arrow-icon>
+  <br><br>
+  <div style="display: flex;max-height: 20px;">
+    <div style="white-space: nowrap;">Above should be an arow Icon like that:</div>
+    <svg
+    version="1.1"
+    preserveAspectRatio="xMidYMid meet"
+    xmlns="http://www.w3.org/2000/svg"
+    width=9
+    height=5
+    viewBox="0 0 9 5"
+    fill="black"
+  >
+  <path d="M0 0L4.00245 5L8.00489 0H0Z" />
+  </svg>
+  </div>
 
+  <br>Stencil source:
+<xmp>
+  <svg
+  version="1.1"
+  preserveAspectRatio="xMidYMid meet"
+  xmlns="http://www.w3.org/2000/svg"
+  width=9
+  height=5
+  viewBox="0 0 9 5"
+  fill="black"
+>
+  <slot />
+</svg>
+
+</xmp>
 
 </body>
 </html>
