@@ -12,6 +12,24 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface TextTag {
+    'className': string;
+    'textStyle': { [key: string]: string };
+    'wrap': boolean;
+  }
+  interface TextTagAttributes extends StencilHTMLAttributes {
+    'className'?: string;
+    'textStyle'?: { [key: string]: string };
+    'wrap'?: boolean;
+  }
+
+  interface DefaultButton {
+    'className': string;
+  }
+  interface DefaultButtonAttributes extends StencilHTMLAttributes {
+    'className'?: string;
+  }
+
   interface ArrowIcon {
     'color': string;
     'height': number;
@@ -28,13 +46,29 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'TextTag': Components.TextTag;
+    'DefaultButton': Components.DefaultButton;
     'ArrowIcon': Components.ArrowIcon;
   }
 
   interface StencilIntrinsicElements {
+    'text-tag': Components.TextTagAttributes;
+    'default-button': Components.DefaultButtonAttributes;
     'arrow-icon': Components.ArrowIconAttributes;
   }
 
+
+  interface HTMLTextTagElement extends Components.TextTag, HTMLStencilElement {}
+  var HTMLTextTagElement: {
+    prototype: HTMLTextTagElement;
+    new (): HTMLTextTagElement;
+  };
+
+  interface HTMLDefaultButtonElement extends Components.DefaultButton, HTMLStencilElement {}
+  var HTMLDefaultButtonElement: {
+    prototype: HTMLDefaultButtonElement;
+    new (): HTMLDefaultButtonElement;
+  };
 
   interface HTMLArrowIconElement extends Components.ArrowIcon, HTMLStencilElement {}
   var HTMLArrowIconElement: {
@@ -43,10 +77,14 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'text-tag': HTMLTextTagElement
+    'default-button': HTMLDefaultButtonElement
     'arrow-icon': HTMLArrowIconElement
   }
 
   interface ElementTagNameMap {
+    'text-tag': HTMLTextTagElement;
+    'default-button': HTMLDefaultButtonElement;
     'arrow-icon': HTMLArrowIconElement;
   }
 

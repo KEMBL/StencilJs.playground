@@ -1,7 +1,5 @@
 dist/
-www/build
-www/index.html
-www/manifest.json
+www/*
 
 *~
 *.sw[mnpcod]

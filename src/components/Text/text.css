@@ -1,0 +1,18 @@
+.textLine--normal {
+  font-family: Segoe UI, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  font-weight: normal;
+}
+
+.textLine--noWrap {
+  white-space: nowrap;
+}
+
+.textLine--semiTransparent {
+  font-weight: 500;
+  opacity: 0.75;
+}
