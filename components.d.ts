@@ -50,8 +50,12 @@ export namespace Components {
     'wrap'?: boolean;
   }
 
-  interface DefaultButton {}
-  interface DefaultButtonAttributes extends StencilHTMLAttributes {}
+  interface DefaultButton {
+    'onClick': () => void;
+  }
+  interface DefaultButtonAttributes extends StencilHTMLAttributes {
+    'onClick'?: () => void;
+  }
 
   interface ArrowIcon {
     'color': string;

@@ -7,8 +7,8 @@ import classNames from "classnames";
   shadow: true
 })
 export class Text {
-  @Prop() className: string;
   @Prop() wrap: boolean;
+  @Prop() semiTransparent: boolean;
   @Prop() cssStyle: { [key: string]: string };
 
   render() {
@@ -17,7 +17,9 @@ export class Text {
       {
         "textLine--noWrap": !this.wrap
       },
-      this.className
+      {
+        "textLine--semiTransparent": this.semiTransparent
+      }
     );
 
     return (

@@ -4,6 +4,8 @@ StencilJs. Components and Tests playground
 
 This project was made in educational purposes. A button "Add .gitignore: None" was taken as an example from site https://github.com/new
 
+Live demo: [http://kembl.ru/stencil/](http://kembl.ru/stencil/).
+
 Were made these components:
 
 	ArrowIcon

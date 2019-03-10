@@ -7,7 +7,6 @@ import classNames from "classnames";
   shadow: true
 })
 export class PopupWindow {
-  @Prop() className: string;
   @Prop() isVisible: boolean;
 
   render() {
@@ -15,8 +14,7 @@ export class PopupWindow {
       "popupWindow",
       {
         "popupWindow--visible": this.isVisible
-      },
-      this.className
+      }
     );
 
     return (
