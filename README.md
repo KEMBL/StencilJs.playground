@@ -17,8 +17,6 @@ Filtration works, click on someoption will change button title.
 
 ![how result looks like](https://raw.githubusercontent.com/KEMBL/StencilJs.playground/develop/src/assets/images/how-it-looks-like.png)
 
-(!) there was StencilJs issue observed: https://github.com/ionic-team/stencil/issues/1408
-
 
 # Tracked issues:
 
