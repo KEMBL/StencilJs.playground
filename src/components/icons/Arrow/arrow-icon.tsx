@@ -8,6 +8,7 @@ export class ArrowIcon {
   @Prop() height: number = 5;
   @Prop() color: string = "black";
   @Prop() viewBox: string = "0 0 9 5";
+  @Prop() cssStyle: { [key: string]: string };
 
   // it is not too good solution to put svg in any Icon but for now it is caused by
   // that issue https://github.com/ionic-team/stencil/issues/1408
@@ -20,6 +21,7 @@ export class ArrowIcon {
         height={this.height}
         viewBox={this.viewBox}
         fill={this.color}
+        style={this.cssStyle}
       >
         <path d="M0 0L4.00245 5L8.00489 0H0Z" />
       </svg>

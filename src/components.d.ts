@@ -12,14 +12,43 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface ListOption {
+    'onOptionSelected': (option: string) => void;
+    'option': string;
+  }
+  interface ListOptionAttributes extends StencilHTMLAttributes {
+    'onOptionSelected'?: (option: string) => void;
+    'option'?: string;
+  }
+
+  interface OptionsList {
+    'header': string;
+    'onOptionSelected': (option: string) => void;
+    'options': string[];
+  }
+  interface OptionsListAttributes extends StencilHTMLAttributes {
+    'header'?: string;
+    'onOptionSelected'?: (option: string) => void;
+    'options'?: string[];
+  }
+
+  interface PopupWindow {
+    'className': string;
+    'isVisible': boolean;
+  }
+  interface PopupWindowAttributes extends StencilHTMLAttributes {
+    'className'?: string;
+    'isVisible'?: boolean;
+  }
+
   interface TextTag {
     'className': string;
-    'textStyle': { [key: string]: string };
+    'cssStyle': { [key: string]: string };
     'wrap': boolean;
   }
   interface TextTagAttributes extends StencilHTMLAttributes {
     'className'?: string;
-    'textStyle'?: { [key: string]: string };
+    'cssStyle'?: { [key: string]: string };
     'wrap'?: boolean;
   }
 
@@ -32,12 +61,14 @@ export namespace Components {
 
   interface ArrowIcon {
     'color': string;
+    'cssStyle': { [key: string]: string };
     'height': number;
     'viewBox': string;
     'width': number;
   }
   interface ArrowIconAttributes extends StencilHTMLAttributes {
     'color'?: string;
+    'cssStyle'?: { [key: string]: string };
     'height'?: number;
     'viewBox'?: string;
     'width'?: number;
@@ -46,17 +77,41 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'ListOption': Components.ListOption;
+    'OptionsList': Components.OptionsList;
+    'PopupWindow': Components.PopupWindow;
     'TextTag': Components.TextTag;
     'DefaultButton': Components.DefaultButton;
     'ArrowIcon': Components.ArrowIcon;
   }
 
   interface StencilIntrinsicElements {
+    'list-option': Components.ListOptionAttributes;
+    'options-list': Components.OptionsListAttributes;
+    'popup-window': Components.PopupWindowAttributes;
     'text-tag': Components.TextTagAttributes;
     'default-button': Components.DefaultButtonAttributes;
     'arrow-icon': Components.ArrowIconAttributes;
   }
 
+
+  interface HTMLListOptionElement extends Components.ListOption, HTMLStencilElement {}
+  var HTMLListOptionElement: {
+    prototype: HTMLListOptionElement;
+    new (): HTMLListOptionElement;
+  };
+
+  interface HTMLOptionsListElement extends Components.OptionsList, HTMLStencilElement {}
+  var HTMLOptionsListElement: {
+    prototype: HTMLOptionsListElement;
+    new (): HTMLOptionsListElement;
+  };
+
+  interface HTMLPopupWindowElement extends Components.PopupWindow, HTMLStencilElement {}
+  var HTMLPopupWindowElement: {
+    prototype: HTMLPopupWindowElement;
+    new (): HTMLPopupWindowElement;
+  };
 
   interface HTMLTextTagElement extends Components.TextTag, HTMLStencilElement {}
   var HTMLTextTagElement: {
@@ -77,12 +132,18 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'list-option': HTMLListOptionElement
+    'options-list': HTMLOptionsListElement
+    'popup-window': HTMLPopupWindowElement
     'text-tag': HTMLTextTagElement
     'default-button': HTMLDefaultButtonElement
     'arrow-icon': HTMLArrowIconElement
   }
 
   interface ElementTagNameMap {
+    'list-option': HTMLListOptionElement;
+    'options-list': HTMLOptionsListElement;
+    'popup-window': HTMLPopupWindowElement;
     'text-tag': HTMLTextTagElement;
     'default-button': HTMLDefaultButtonElement;
     'arrow-icon': HTMLArrowIconElement;

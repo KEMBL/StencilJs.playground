@@ -1,0 +1,10 @@
+.popupWindow {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  display: none;
+}
+
+.popupWindow--visible {
+  display: block;
+}

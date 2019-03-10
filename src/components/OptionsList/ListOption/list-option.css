@@ -1,0 +1,11 @@
+.listOption {
+  border-bottom: 1px solid #eaecef;
+  color: #586069;
+  cursor: pointer;
+  padding: 8px 8px 8px 30px;
+}
+
+.listOption:hover {
+  background-color: #0366d6;
+  color: #fff;
+}

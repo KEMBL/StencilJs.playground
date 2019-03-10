@@ -1,4 +1,4 @@
-import { Component, Prop } from "@stencil/core";
+import { Component, Prop, State } from "@stencil/core";
 import classNames from "classnames";
 
 declare type ButtonState = "notActive" | "Active";
@@ -11,36 +11,49 @@ declare type ButtonState = "notActive" | "Active";
 export class DefaultButton {
   @Prop() className: string;
 
-  // @Prop() buttonState: ButtonState = "notActive";
+  @State() buttonState: ButtonState = "notActive";
+  @State() selectedOption: string = "None";
 
-  buttonState: ButtonState;
+  private handleClick = () => {
+    this.buttonState = this.isActive ? "notActive" : "Active";
+  };
 
-  handleClick(event: UIEvent) {
-    alert("Received the button click: " + event.type);
+  private get isActive(): boolean {
+    return this.buttonState === "Active";
   }
 
-  // it is not too good solution to put svg in any Icon but for now it is caused by
-  // that issue https://github.com/ionic-team/stencil/issues/1408
+  private onOptionSelectedHandler = (option: string) => {
+    this.selectedOption = option;
+    this.handleClick();
+  };
+
   render() {
     const classes = classNames(
       "defaultButton",
       {
-        "defaultButton--active": this.buttonState === "Active"
+        "defaultButton--active": this.isActive
       },
       this.className
     );
 
     return (
-      <button
-        onClick={(event: UIEvent) => this.handleClick(event)}
-        class={classes}
-      >
-        <text-tag className="textLine--semiTransparent">
-          Add .gitignore:
-        </text-tag>{" "}
-        <text-tag textStyle={{ "font-weight": "500" }}>None</text-tag>{" "}
-        <arrow-icon />
-      </button>
+      <div>
+        <button onClick={() => this.handleClick()} class={classes}>
+          <text-tag className="textLine--semiTransparent">
+            Add .gitignore:
+          </text-tag>{" "}
+          <text-tag cssStyle={{ "font-weight": "500" }}>
+            {this.selectedOption}
+          </text-tag>{" "}
+          <arrow-icon height={5} cssStyle={{ "margin-bottom": "1px" }} />
+        </button>
+        <popup-window isVisible={this.isActive}>
+          <options-list
+            header=".gitignore"
+            onOptionSelected={this.onOptionSelectedHandler}
+          />
+        </popup-window>
+      </div>
     );
   }
 }

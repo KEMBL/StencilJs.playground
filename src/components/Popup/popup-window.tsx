@@ -2,28 +2,27 @@ import { Component, Prop } from "@stencil/core";
 import classNames from "classnames";
 
 @Component({
-  tag: "text-tag",
-  styleUrl: "text.css",
+  tag: "popup-window",
+  styleUrl: "popup-window.css",
   shadow: true
 })
-export class Text {
+export class PopupWindow {
   @Prop() className: string;
-  @Prop() wrap: boolean;
-  @Prop() cssStyle: { [key: string]: string };
+  @Prop() isVisible: boolean;
 
   render() {
     const classes = classNames(
-      "textLine--normal",
+      "popupWindow",
       {
-        "textLine--noWrap": !this.wrap
+        "popupWindow--visible": this.isVisible
       },
       this.className
     );
 
     return (
-      <span class={classes} style={this.cssStyle}>
+      <div class={classes}>
         <slot />
-      </span>
+      </div>
     );
   }
 }
