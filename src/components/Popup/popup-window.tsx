@@ -10,12 +10,9 @@ export class PopupWindow {
   @Prop() isVisible: boolean;
 
   render() {
-    const classes = classNames(
-      "popupWindow",
-      {
-        "popupWindow--visible": this.isVisible
-      }
-    );
+    const classes = classNames("popupWindow", {
+      "popupWindow--visible": this.isVisible
+    });
 
     return (
       <div class={classes}>

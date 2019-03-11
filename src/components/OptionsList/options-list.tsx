@@ -33,7 +33,7 @@ export class OptionsList {
 
   @State() private filter: string;
 
-  inputChanged(event) {
+  private inputChangedHandler(event) {
     this.filter = event.target.value;
   }
 
@@ -50,11 +50,11 @@ export class OptionsList {
               class="optionsList__searchInput"
               placeholder="Filter ignores…"
               autofocus=""
-              onInput={(event: UIEvent) => this.inputChanged(event)}
+              onInput={(event: UIEvent) => this.inputChangedHandler(event)}
             />
           </div>
         </div>
-        <div class="optionsList__languages">
+        <div class="optionsList__options">
           {this.options
             .filter(item =>
               this.filter

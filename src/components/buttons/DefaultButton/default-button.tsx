@@ -7,7 +7,7 @@ import classNames from "classnames";
   shadow: true
 })
 export class DefaultButton {
-  @State() buttonState: boolean;
+  @State() private buttonState: boolean;
 
   private handleClick = () => {
     this.buttonState = !this.buttonState;
@@ -19,7 +19,7 @@ export class DefaultButton {
     });
 
     return (
-      <button onClick={() => this.handleClick()} class={classes}>
+      <button onClick={this.handleClick} class={classes}>
         <slot />
       </button>
     );

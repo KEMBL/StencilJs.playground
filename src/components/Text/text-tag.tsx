@@ -3,10 +3,10 @@ import classNames from "classnames";
 
 @Component({
   tag: "text-tag",
-  styleUrl: "text.css",
+  styleUrl: "text-tag.css",
   shadow: true
 })
-export class Text {
+export class TextTag {
   @Prop() wrap: boolean;
   @Prop() semiTransparent: boolean;
   @Prop() cssStyle: { [key: string]: string };

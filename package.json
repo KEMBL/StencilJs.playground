@@ -1,7 +1,7 @@
 {
   "name": "stencil-playground",
   "private": true,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Project with component examples and tests",
   "scripts": {
     "build": "stencil build",
@@ -11,12 +11,26 @@
   },
   "dependencies": {
     "@stencil/core": "~0.18.0",
-    "classnames": "^2.2.6",
-    "stencil-fragment": "^1.0.1"
+    "classnames": "^2.2.6"
   },
   "license": "MIT",
   "devDependencies": {
     "@types/classnames": "^2.2.7",
+    "@types/jest": "23.3.14",
+    "@types/lodash.debounce": "^4.0.6",
+    "@types/puppeteer": "1.11.1",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0",
+    "puppeteer": "1.11.0",
     "workbox-build": "3.4.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KEMBL/StencilJs.playground.git"
+  },
+  "author": "Dmitrii",
+  "bugs": {
+    "url": "https://github.com/ionic-team/stencil/issues/1408"
+  },
+  "homepage": "http://kembl.ru/stencil"
 }
