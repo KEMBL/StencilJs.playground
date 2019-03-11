@@ -4,9 +4,9 @@ StencilJs. Components and Tests playground
 
 This project was made in educational purposes. A button "Add .gitignore: None" was taken as an example from site https://github.com/new
 
-Live demo: [http://kembl.ru/stencil/](http://kembl.ru/stencil/).
+**Live** demo: [http://kembl.ru/stencil/](http://kembl.ru/stencil/).
 
-BDD test resides here: [https://github.com/KEMBL/BDD-tests](https://github.com/KEMBL/BDD-tests).
+**BDD** test resides here: [https://github.com/KEMBL/BDD-tests](https://github.com/KEMBL/BDD-tests).
 
 Were made these components:
 
