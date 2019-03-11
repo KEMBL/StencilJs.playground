@@ -6,7 +6,7 @@ This project was made in educational purposes. A button "Add .gitignore: None" w
 
 **Live** demo: [http://kembl.ru/stencil/](http://kembl.ru/stencil/).
 
-Simple **BDD** test resides here: [https://github.com/KEMBL/BDD-tests](https://github.com/KEMBL/BDD-tests).
+Project includes spec, e2e tests, simple **BDD** test resides here: [https://github.com/KEMBL/BDD-tests](https://github.com/KEMBL/BDD-tests).
 
 Were made these components:
 
@@ -16,6 +16,7 @@ Were made these components:
 	ListOption item
 	PopupWindow
 	Text
+  ButtonWithPopup
 
 Filtration works, click on someoption will change button title.
 
