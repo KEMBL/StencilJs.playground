@@ -16,7 +16,7 @@ Were made these components:
 	ListOption item
 	PopupWindow
 	Text
-  ButtonWithPopup
+	ButtonWithPopup
 
 Filtration works, click on someoption will change button title.
 
