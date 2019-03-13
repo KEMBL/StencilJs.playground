@@ -18,7 +18,7 @@ Were made these components:
 	Text
 	ButtonWithPopup
 
-Filtration works, click on someoption will change button title.
+Filtration works, click on some option will change button title.
 
 ![how result looks like](https://raw.githubusercontent.com/KEMBL/StencilJs.playground/develop/src/assets/images/how-it-looks-like.png)
 
